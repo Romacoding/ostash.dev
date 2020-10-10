@@ -1,4 +1,4 @@
-baseURL = "http://ostash.dev/"
+baseURL = "https://ostash.dev/"
 languageCode = "en-us"
 title = "Ostash.Dev"
 theme = "ezhil"
