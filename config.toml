@@ -79,7 +79,7 @@ weight = 4
 [[params.social]]
 name = "E-mail"
 icon = "at-sign"
-url = "mailto:ostash.dev"
+url = "mailto:roman@ostash.dev"
 
 [[params.social]]
 name = "Resume"
