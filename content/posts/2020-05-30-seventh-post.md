@@ -1,6 +1,6 @@
 ---
 title: "Immutability"
-date: 2020-10-10T14:42:56-04:00
+date: 2020-11-10T14:42:56-04:00
 tags: [Immutability, Mutability, Functional programming]
 draft: false
 ---
