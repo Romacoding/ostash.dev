@@ -101,6 +101,11 @@ name = "LinkedIn"
 icon = "linkedin"
 url = "https://www.linkedin.com/in/roman-ostash/"
 
+[[params.social]]
+name = "YouTube"
+icon = "youtube"
+url = "https://www.youtube.com/channel/UCksRn0rEBbI7motf1oKekbQ"
+
 # Enable tags.
 [taxonomies]
    tag = "tags"
