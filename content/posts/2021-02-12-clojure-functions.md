@@ -12,7 +12,7 @@ A **list** data structure is used to store a collection of data. Items in the li
 (1 2 3)
 ```
 There is no need for commas in Clojure to separate values. We use a whitespace instead.  
-Clojure interpreter expects the first item in a list(your expression) to be a function. In this simple example we will add 3 numbers. + is actually a function from the clojure.core namespace (namespaces are like modules in JS world). When we evaluate the expression we will get 6.
+Clojure interpreter expects the first item in a list (your expression) to be a function. In this simple example we will add 3 numbers. + is actually a function from the clojure.core namespace (namespaces are like modules in JS world). When we evaluate the expression we will get 6.
 ```clojure
 (+ 1 2 3) -> 6
 ```
