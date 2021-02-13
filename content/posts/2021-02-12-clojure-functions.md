@@ -11,7 +11,7 @@ A **list** is a data structure used to store a collection of data. Items in a li
 ```clojure
 (1 2 3)
 ```
-There is no need for commas in Clojure to separate values. They are treated as a white space.  
+There is no need for commas in Clojure to separate values. We use a space instead.  
 Clojure interpreter expects the first item in a list to be a function. In this simple example we will add 3 numbers. + is actually a function from clojure.core namespace (module in JS world). When we evaluate the expression we will get 6.
 ```clojure
 (+ 1 2 3) -> 6
@@ -20,7 +20,7 @@ If we try to evaluate a list `(1 2 3)` we will get an execution error. To preven
 ```clojure
 '(1 2 3) -> (1 2 3)
 ```
-Let's see how we would define a function in Clojure. We use a *defn* macros (a type of the function) followed by parameters in square brackets then the body of the function. We could have multiple calculations in the body, but only the last one is returned.
+Let's see how we would define a function in Clojure. We use a *defn* macros (a type of function) followed by parameters in square brackets then the body of the function. We could have multiple calculations in the body, but only the last one is returned.
 ```clojure
 (defn sum
   [a b]
@@ -35,7 +35,7 @@ To understand what macros *defn* is doing under the hood let's try to define a *
 (def sum
   (fn [a b] (+ a b)))
 ```
-Another way to write an anonymous function is to use a shorthand syntax. We use a pound or hash symbol then our evaluation(body) inside parenthesis and the arguments separated by comma. Finally we wrap our function in parenthesis. In the body we use *%* as a placeholder for parameters, %1 for the first %2 for the second as so on. We don't need to use a parameter number if only one is expected.
+Another way to write an anonymous function is to use a shorthand syntax. We use a pound or hash symbol then our evaluation(body) inside parenthesis and the arguments separated by comma. Finally we wrap our function in parenthesis. In the body we use *%* as a placeholder for parameters, %1 for the first %2 for the second and so on. We don't need to use a parameter number if only one is expected.
 ```clojure
 (#(+ %1 %2) 2 5)
 ```
