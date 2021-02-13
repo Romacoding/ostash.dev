@@ -5,14 +5,14 @@ tags: [Functions, Clojure, ClojureScript, Functional programming]
 draft: false
 ---
 
-**Functions** in Clojure are data structures since the language follows **code as a data structure** principle (homoiconicity).  
+**Functions** in Clojure are data structures since the language follows code as a data structure principle (homoiconicity).  
 In Clojure those data structures are **lists** since it is a dialect of the **LISP** (LISt Processor) language, the second oldest language still in use today.  
-A **list** is a data structure used to store a collection of data. Items in a list are wrapped in parenthesis.  
+A **list** data structure is used to store a collection of data. Items in the list are wrapped in parenthesis.  
 ```clojure
 (1 2 3)
 ```
-There is no need for commas in Clojure to separate values. We use a space instead.  
-Clojure interpreter expects the first item in a list to be a function. In this simple example we will add 3 numbers. + is actually a function from clojure.core namespace (module in JS world). When we evaluate the expression we will get 6.
+There is no need for commas in Clojure to separate values. We use a whitespace instead.  
+Clojure interpreter expects the first item in a list(your expression) to be a function. In this simple example we will add 3 numbers. + is actually a function from the clojure.core namespace (namespaces are like modules in JS world). When we evaluate the expression we will get 6.
 ```clojure
 (+ 1 2 3) -> 6
 ```
@@ -20,17 +20,17 @@ If we try to evaluate a list `(1 2 3)` we will get an execution error. To preven
 ```clojure
 '(1 2 3) -> (1 2 3)
 ```
-Let's see how we would define a function in Clojure. We use a *defn* macros (a type of function) followed by parameters in square brackets then the body of the function. We could have multiple calculations in the body, but only the last one is returned.
+Let's see how we would define a function in Clojure. We use a *defn* macros (a special type of function) followed by parameters in square brackets then the body of the function. We could have multiple expressions in the body, but only the last one is returned.
 ```clojure
 (defn sum
   [a b]
   (+ a b))
 ```
-To run the function type the name and function arguments wrapped in parenthesis. When we evaluate it we get 7.
+To run the function we type the name and function arguments wrapped in parenthesis. As a result we get 7.
 ```clojure
 (sum 2 5) -> 7
 ```
-To understand what macros *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* *sum* (variable in JS) and we assign to it an anonymous function. So *defn* macros is a "syntactical sugar" to make our code more concise and clean.
+To understand what macros *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (variable in JS) *sum*  and we assign to it an anonymous function. So *defn* macros is a "syntactical sugar" to make our code more concise and clean.
 ```clojure
 (def sum
   (fn [a b] (+ a b)))
@@ -47,7 +47,7 @@ If we would like to comment a line of code we simply use a semicolon at the begi
   [a b]
   (+ a b))
 ```
-You could put a comment inside of the function, after its name before the parameters.
+You could put a comment inside of the function, after its name but before parameters.
 ```clojure
 (defn sum
   "Returns sum of a and b"
