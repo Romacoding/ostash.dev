@@ -20,7 +20,7 @@ If we try to evaluate a list `(1 2 3)` we will get an execution error. To preven
 ```clojure
 '(1 2 3) -> (1 2 3)
 ```
-Let's see how we would define a function in Clojure. We use a *defn* macros (a special type of function) followed by parameters in square brackets then the body of the function. We could have multiple expressions in the body, but only the last one is returned.
+Let's see how we would define a function in Clojure. We use a *defn* macros (a special type of function), specify the name  followed by parameters in square brackets then the body of the function. We could have multiple expressions in the body, but only the last one is returned.
 ```clojure
 (defn sum
   [a b]
@@ -55,4 +55,4 @@ You could put a comment inside of the function, after its name but before parame
   (+ a b))
 ```
 Here is a video for this section.
-{{< youtube FoDj-DTISes >}}
+{{< youtube etZjT_NabIg >}}
