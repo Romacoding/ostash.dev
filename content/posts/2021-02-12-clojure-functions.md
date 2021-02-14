@@ -35,7 +35,7 @@ To understand what macros *defn* is doing under the hood let's try to define a *
 (def sum
   (fn [a b] (+ a b)))
 ```
-Another way to write an anonymous function is to use a shorthand syntax. We use a pound or hash symbol then our evaluation(body) inside parenthesis and the arguments separated by comma. Finally we wrap our function in parenthesis. In the body we use *%* as a placeholder for parameters, %1 for the first %2 for the second and so on. We don't need to use a parameter number if only one is expected.
+Another way to write an anonymous function is to use a shorthand syntax. We use a pound or hash symbol then our evaluation(body) inside parenthesis and the arguments separated by whitespace. Finally we wrap our function in parenthesis. In the body we use *%* as a placeholder for parameters, %1 for the first %2 for the second and so on. We don't need to use a parameter number if only one is expected.
 ```clojure
 (#(+ %1 %2) 2 5)
 ```
