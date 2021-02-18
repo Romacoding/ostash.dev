@@ -12,7 +12,7 @@ We could also bind an expression to a *var*. Function *range* in our example ret
 ```clojure
 (def my-new-list (range 3))
 ```
-We could also define a lexically scoped (local) binding with a *let* special form. We declare them in square brackets by providing name and value pairs. *a* and *b* are only accesibble in *let* scope wraped with parenthesis. 
+We could also define a lexically scoped (local) bindings with a *let* special form. We declare them in square brackets by providing name and value pairs. *a* and *b* are only accesibble in *let* scope wraped with parenthesis. 
 ```clojure
 (let [a 1
       b 2] 
