@@ -20,7 +20,7 @@ If we try to evaluate a list `(1 2 3)` we will get an execution error. To preven
 ```clojure
 '(1 2 3) -> (1 2 3)
 ```
-Let's see how we would define a function in Clojure. We use a *defn* macros (a special type of function), specify the name (symbol)  followed by parameters in square brackets then the body (expression) of the function. We could have multiple expressions in the body, but only the last one is returned.
+Let's see how we would define a function in Clojure. We use a *defn* macro (a special type of function), specify the name (symbol)  followed by parameters in square brackets then the body (expression) of the function. We could have multiple expressions in the body, but only the last one is returned.
 ```clojure
 (defn sum
   [a b]
@@ -30,7 +30,7 @@ To run the function we type the name and function arguments wrapped in parenthes
 ```clojure
 (sum 2 5) -> 7
 ```
-To understand what macros *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (similar to a variable in JS) with the name *sum* (symbol)  and we assign to it an anonymous function. So *defn* macros is a "syntactical sugar" to make our code more concise and clean.
+To understand what macro *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (similar to a variable in JS) with the name *sum* (symbol)  and we assign to it an anonymous function. So *defn* macro is a "syntactical sugar" to make our code more concise and clean.
 ```clojure
 (def sum
   (fn [a b] (+ a b)))
