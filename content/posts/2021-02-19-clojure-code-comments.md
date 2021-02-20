@@ -22,7 +22,7 @@ When a comment is in line with the code we just use a single semi-colon. We coul
   [a b] ; our inline comment
   (+ a b))
 ```
-Finnaly we can use a *comment* macro (*Rich Comment*) for the code we are only going to use for development/debugging. It returns *nil* when evaluated.
+Finnaly we can use a *comment* macro (*Rich Comment*) for the code we are only going to use for development/debugging. For example we could have two versions of the same function but with different implementations. It returns *nil* when evaluated.
 ```clojure
 (comment 
   (println "Test string")
