@@ -45,7 +45,7 @@ user=> (source print)
 nil
 
 ```
-We can also expand the macro and see what it is doing "under the hood". In the example below we use a macroexpand function on the *defn* macro. As we can see it is actually uses *def* special form to assign to a *var* sum an anonymos function.
+We can also expand the macro and see what it is doing "under the hood". In the example below we use a *macroexpand* function on the *defn* macro. As we can see it is actually uses *def* special form to assign to a *var* sum an anonymos function.
 ```clojure
 user=> (macroexpand '(defn sum [a b] (+ a b)))
 (def sum (clojure.core/fn ([a b] (+ a b))))
