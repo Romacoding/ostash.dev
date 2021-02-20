@@ -22,7 +22,7 @@ To switch to a specific namespace we use *in-ns* function.
 ```clojure
 (in-ns 'clojure.string) ; -> #namespace[clojure.string]
 ```
-To see all functions avaliable in a specific namespace we can use *ns-publics* function. It returns a map data structure so to get only names we use *keys* function.
+To see all functions available in a specific namespace we can use *ns-publics* function. It returns a map data structure so to get only names we use *keys* function.
 ```clojure
 (keys (ns-publics 'clojure.string)) ; -> (capitalize reverse join trim ...)
 ```
