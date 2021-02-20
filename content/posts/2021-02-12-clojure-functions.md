@@ -20,7 +20,7 @@ If we try to evaluate a list `(1 2 3)` we will get an execution error. To preven
 ```clojure
 '(1 2 3) -> (1 2 3)
 ```
-Let's see how we would define a function in Clojure. We use a *defn* macros (a special type of function), specify the name  followed by parameters in square brackets then the body(expression) of the function. We could have multiple expressions in the body, but only the last one is returned.
+Let's see how we would define a function in Clojure. We use a *defn* macros (a special type of function), specify the name (symbol)  followed by parameters in square brackets then the body (expression) of the function. We could have multiple expressions in the body, but only the last one is returned.
 ```clojure
 (defn sum
   [a b]
@@ -30,29 +30,12 @@ To run the function we type the name and function arguments wrapped in parenthes
 ```clojure
 (sum 2 5) -> 7
 ```
-To understand what macros *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (similar to a variable in JS) with the name *sum*  and we assign to it an anonymous function. So *defn* macros is a "syntactical sugar" to make our code more concise and clean.
+To understand what macros *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (similar to a variable in JS) with the name *sum* (symbol)  and we assign to it an anonymous function. So *defn* macros is a "syntactical sugar" to make our code more concise and clean.
 ```clojure
 (def sum
   (fn [a b] (+ a b)))
 ```
-Another way to write an anonymous function is to use a shorthand syntax(lambda functions). We use a pound or hash symbol then our expression(body) inside parenthesis and arguments separated by whitespace. Finally we wrap our function in parenthesis. In the body we use *%* as a placeholder for parameters, %1 for the first %2 for the second and so on. We don't need to use a parameter number if only one is expected.
+Another way to write an anonymous function is to use a shorthand syntax (lambda function). We use a pound or hash symbol then our expression (body) inside parenthesis and arguments separated by whitespace. Finally we wrap our function in parenthesis. In the body we use *%* as a placeholder for parameters, %1 for the first %2 for the second and so on. We don't need to use a parameter number if only one is expected.
 ```clojure
 (#(+ %1 %2) 2 5)
 ```
-If we would like to comment a line of code we simply use a semicolon at the beginning. To comment a block of the code we use *#_* a reader macro.
-```clojure
-;(1 2 3)
-
-#_(defn sum
-  [a b]
-  (+ a b))
-```
-You could put a comment inside of the function, after its name but before parameters.
-```clojure
-(defn sum
-  "Returns sum of a and b"
-  [a b]
-  (+ a b))
-```
-Here is a video for this section.
-{{< youtube etZjT_NabIg >}}
