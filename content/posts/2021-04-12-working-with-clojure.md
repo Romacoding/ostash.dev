@@ -4,7 +4,6 @@ date: 2021-04-12T00:09:56-04:00
 tags: [Functions, REPL, ClojureScript, JavaScript, Functional programming]
 draft: false
 ---
-
 Today we are going to talk about ClojureScript and review many useful functions and concepts you need to know when working with Clojure/JavaScript interoperability.
 
 To get started you would need a ClojureScript Repl running. On Mac OS and Linux systems I recommend to install [Planck](https://planck-repl.org/guide-all.html).
