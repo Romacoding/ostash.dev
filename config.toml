@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Ostash.Dev"
 theme = "ezhil"
 
-copyright = "© Roman Ostash 2020"
+copyright = "© Roman Ostash 2021"
 
 # Enable syntax highlighting.
 pygmentsstyle = "solarized-dark"

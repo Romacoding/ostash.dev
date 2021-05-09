@@ -10,7 +10,7 @@ To get started you would need a ClojureScript Repl running. On Mac OS and Linux 
 
 You can even practice with ClojureScript on your mobile phone with Replete REP‪L app.  It is available for both [Apple](https://apps.apple.com/us/app/replete-repl/id1013465639) and [Android](https://play.google.com/store/apps/details?id=com.fikesfarm.Replete&hl=en_US&gl=US) platforms. 
 
-With a ClojureScript Repl running we can now start to experiment. In ClojureScript to access JavaScript functions we have a special namespace `js`. For those coming from JavaScript `js` is the same as `window` object in a browser with all builtin functions(methods) attached to it. For ex: `(js/alert "Hello world!")` or `(js/console.log "Hello world!")`.
+With a ClojureScript Repl running we can now start to experiment. In ClojureScript to access JavaScript functions we have a special namespace `js`. For those coming from JavaScript `js` is the same as `window` object in a browser with all builtin functions(methods) attached to it. For ex.: `(js/alert "Hello world!")` or `(js/console.log "Hello world!")`.
 
 In the example below we will print "Hello world" with a delay of 1000 ms using a setTimeout function:
 ```clojure
