@@ -12,11 +12,11 @@ A **list** data structure is used to store a collection of data. Items in the li
 (1 2 3)
 ```
 There is no need for commas in Clojure to separate values. We use a whitespace instead.  
-A Clojure interpreter expects the first item in a list (symbolic expression) to be a function (prefix notation). In this simple example we will add 3 numbers. + is actually a function from the clojure.core namespace (namespaces are like modules in JS world). When we evaluate the expression we will get 6.
+A Clojure interpreter expects the first item in a symbolic expression(list) to be a function (prefix notation). In this simple example we will add 3 numbers. + is actually a function from the clojure.core namespace (namespaces are like modules in the JS world). When we evaluate the expression we will get 6.
 ```clojure
 (+ 1 2 3) -> 6
 ```
-If we try to evaluate a list `(1 2 3)` we will get an execution error. To prevent this we simply put an apostrophe before the data structure. When we evaluate the code a list itself is returned.
+If we try to evaluate a list `(1 2 3)` we will get an execution error. To prevent this from happening we simply put a `quote '` before the data structure. When we evaluate the code the list itself is returned.
 ```clojure
 '(1 2 3) -> (1 2 3)
 ```
@@ -30,7 +30,7 @@ To run the function we type the name and function arguments wrapped in parenthes
 ```clojure
 (sum 2 5) -> 7
 ```
-To understand what macro *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (similar to a variable in JS) with the name *sum* (symbol)  and we assign to it an anonymous function. So *defn* macro is a "syntactical sugar" to make our code more concise and clean.
+To understand what macro *defn* is doing under the hood let's try to define a *sum* function using a *def* special form. *Def* declares a global *Var* (similar to a variable in JS) with the name *sum* (symbol data type)  and we assign to it an anonymous function. So *defn* macro is a "syntactical sugar" to make our code more concise and clean.
 ```clojure
 (def sum
   (fn [a b] (+ a b)))
