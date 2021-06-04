@@ -38,10 +38,10 @@ Another useful function when working with atoms is `compare-and-set!`. It sets t
 (compare-and-set! atom-name value-to-compare new-value)
 ```
 
-##Watchers and validators
+#Watchers and validators
 
 We can monitor our state changes by adding a watcher to the atom. Everytime the atom is changed a watcher function is run. It is useful for making your application reactive to changes of its state.
-For those who are familiar with the JavaScript library React, this behavior is not new. A change to the state in React triggers the re-rendering of the component that uses its any of the state's values.
+For those who are familiar with the JavaScript library React, this behavior is not new. A change to the state in React triggers the re-rendering of the component that uses any of the state's values.
 
 ```clojure
 (add-watch bank-account :logger (fn [key state old-value new-value]
@@ -66,9 +66,9 @@ The function `set-validator!` sets a validator for the atom to check if a new st
 (set-validator! bank-account (fn [new-state]
                                 (>= (:balance new-state) 0)))
 
-(defn withdraw-balance [credit]
+(defn withdraw-balance [debit]
   (swap! bank-account update :balance (fn [prev-balance] 
-                                        (- prev-balance credit))))
+                                        (- prev-balance debit))))
 
 (update-balance 10) => Balance was changed to: 10
 
