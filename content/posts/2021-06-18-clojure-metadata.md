@@ -2,7 +2,7 @@
 title: "Clojure metadata"
 date: 2021-06-18T00:06:16-09:00
 tags: [Functions, Metadata, Clojure, Functional programming]
-draft: true
+draft: false
 ---
 Conceptually metadata is an ability for the symbol or the collection to have some additional information for the Clojure compiler. It is implemented as a map data structure and is often used to convey the type information to the compiler, documentation and compilation warnings.
 Let's experiment with metadata in the REPL. Function `meta` is used to read metadata, `with-meta` to write metadata.
