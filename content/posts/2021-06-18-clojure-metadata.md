@@ -11,7 +11,7 @@ Let's experiment with metadata in the REPL. Function `meta` is used to read meta
 (meta (with-meta m-data {:doc "Test"})) => {:doc "Test"}
 ```
 
-In Clojure we can define some custom properties that will be saved in object metadata. For example, if we want to make global Var `xx` private(not accessible outside of the current namespace) we can add `^:private` in the form definition(^ is the metadata marker). Now Var `xx` has a metadata property :private with a value of `true`.
+In Clojure we can define some custom properties that will be saved in object's metadata. For example, if we want to make global Var `xx` private (not accessible outside of the current namespace) we can add `^:private` in the form definition (^ is the metadata marker). Now Var `xx` has a metadata property :private with a value of `true`.
 ```clojure
 (def ^:private xx 0) => #'user/xx
 (meta #'xx) => 	{:private true,
@@ -21,7 +21,7 @@ In Clojure we can define some custom properties that will be saved in object met
 				:name xx, 
 				:ns #object[clojure.lang.Namespace 0x6e5bfdfc "user"]}
 ```
-We use `#'` Var quote to pass the Var reference to the meta function(and not the value it resolves to).
+We use `#'` Var quote to pass the Var reference to the meta function (and not the value it resolves to).
 A `^:private` directive also works for functions. Alternatively we can use the `defn-` macro to make the function private.
 
 Another useful metadata property is `^:const`. It tells the Clojure compiler that the Var should not be redefined later in the code and remains constant.
