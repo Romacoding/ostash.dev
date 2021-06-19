@@ -36,7 +36,7 @@ A `^dynamic` property gives the ability to redefine Var only for the current for
 
 Function's metadata additionally has an `arglists` property.
 ```clojure
-(defn func [a b c]) =>
+(defn func [a b c]) => #'user/func
 (meta #'func) => 	{:arglists ([a b c]), 
 					:line 1, ...}
 ```
