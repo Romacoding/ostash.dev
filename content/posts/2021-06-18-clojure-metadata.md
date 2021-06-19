@@ -7,7 +7,7 @@ draft: false
 Conceptually metadata is an ability for the symbol or the collection to have some additional information for the Clojure compiler. It is implemented as a map data structure and is often used to convey the type information to the compiler, documentation and compilation warnings.
 Let's experiment with metadata in the REPL. Function `meta` is used to read metadata, `with-meta` to write metadata.
 ```clojure
-(def m-data {:first "Roman"})
+(def m-data {:first "Roman"}) => #'user/m-data
 (meta (with-meta m-data {:doc "Test"})) => {:doc "Test"}
 ```
 
