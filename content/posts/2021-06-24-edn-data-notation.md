@@ -1,6 +1,6 @@
 ---
 title: "Data notation in Clojure"
-date: 2021-06-24T00:06:16-09:00
+date: 2021-06-23T00:06:16-09:00
 tags: [EDN, Extensible data notation, Clojure, Functional programming]
 draft: false
 ---
@@ -25,7 +25,7 @@ When you work with EDN files using functions `spit` (to write to a file) and `sl
 (read-string (slurp "sample.edn")) => {:id 1}
 ```
 
-For security reasons and as a good practice it is better to use the `read-string` function from the `clojure.edn` namespace. It only parses lists, maps and vectors and prevents from running a malicious code when working with files from an "unsafe" source.
+For security reasons and as a good practice it is better to use the `read-string` function from the `clojure.edn` namespace. It only parses lists, maps and vectors and protects from accidental execution of a malicious code when working with EDN files from an "unsafe" source (clojure.core/read-string can execute code and should be used only with trusted sources).
 ```clojure
 (require 'clojure.edn) => nil
 (clojure.edn/read-string (slurp "sample.edn")) => {:id 1}
