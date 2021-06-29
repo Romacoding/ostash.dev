@@ -1,7 +1,7 @@
 ---
 title: "Clojure metadata"
 date: 2021-06-18T00:06:16-09:00
-tags: [Functions, Metadata, Clojure, Functional programming]
+tags: [Type hints, Metadata, Clojure, Functional programming]
 draft: false
 ---
 Conceptually metadata is an ability for the symbol or the collection to have some additional information for the Clojure compiler. It is implemented as a map data structure and is often used to convey the type information to the compiler, documentation and compilation warnings.
@@ -54,5 +54,7 @@ For example we can define that our function should always return `String` type w
 (meta (first (:arglists (meta #'f)))) => {:tag java.lang.String}
 (meta (first (first (:arglists (meta #'f))))) => {:tag Long}
 ```
+
+It is important to mention that type hints are not a substitution for the static typing in Clojure. They are just hints for the compiler. In some cases, like usage of Java methods and classes or Clojure `records`, type hints help to optimize the code and to improve the application performance. It is done by minimizing the compiler lookup time for the methods in Java classes when we specify the class type in our code.
 
 Hopefully now you have more knowledge about Clojure metadata and will use it efficiently in your day to day work.
