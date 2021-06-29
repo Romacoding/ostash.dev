@@ -1,6 +1,6 @@
 ---
 title: "Pre and post conditions in Clojure"
-date: 2021-06-29T00:06:16-09:00
+date: 2021-07-01T00:03:16-09:00
 tags: [Assertions, Function conditions, Clojure, Functional programming]
 draft: true
 ---
