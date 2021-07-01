@@ -5,7 +5,7 @@ tags: [EDN, Extensible data notation, Clojure, Functional programming]
 draft: false
 ---
 
-Homoiconisity (code as a data structure) is one of the pillars of the Clojure language. It gives the extensibility and flexibility to the language.  For example we have a power to easily extend Clojure language by creating macros since in this process we can use all available functions for the data structures. 
+Homoiconicity (code as a data structure) is one of the pillars of the Clojure language. It gives the extensibility and flexibility to the language.  For example we have a power to easily extend Clojure language by creating macros since in this process we can use all available functions for the data structures. 
 
 Furthermore, we can use Clojure syntax notation for the data serialization/de-serialization, data transfers between the server and a client (Clojure => ClojureScript). A set of rules (a standard) of organizing the data is called EDN - extensible data notation.  A JSON format similarly was created with the syntax of the JavaScript language.
 
