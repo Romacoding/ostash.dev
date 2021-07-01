@@ -1,6 +1,6 @@
 ---
 title: "Transient Data Structures in Clojure"
-date: 2021-07-01T00:03:16-09:00
+date: 2021-07-15T00:03:16-09:00
 tags: [Performance, Transient Data Structures, Transients, Clojure, Functional programming]
 draft: true
 ---
@@ -38,7 +38,7 @@ We use macros `time` to check how long the function runs to perform our calculat
 
 ```
 
-What if we use a JavaScript array in the ClojureScript environment instead? A function `js->clj` is used to convert JS array to the Clojure vector.
+What if we use a JavaScript array in the ClojureScript environment instead? The tagged literal `#js` will create a JS data structure (an array in our case). `.push` adds elements to our array. A function `js->clj` is used to convert JS array to the Clojure vector. 
 ```Clojure
 ;; ClojureScript
 (defn vrange-j [n]
