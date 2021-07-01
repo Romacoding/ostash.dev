@@ -7,7 +7,7 @@ draft: false
 
 Today we will discuss a topic of `pre` and `post` assertions (conditions) in Clojure. The language gives programmers an option to set certain conditions we want to constrain our function with. We can define the limitations on the input parameters and the return value of the function.
 
-`Pre` and `post` assertions are defined in a vector and can be saved in a function's [metadata](/posts/2021-06-18-clojure-metadata). The assertions we define in `pre` and `post` condition vectors must return logical `true` for the constrains to pass. If any of them evaluate to `false` we will receive an `AssertionError` with the specific constrain assertions returned.
+`Pre` and `post` assertions are defined in a vector and can be saved in a function's [metadata](/posts/2021-06-18-clojure-metadata). The assertions we define in `pre` and `post` condition vectors must return logical `true` for the constrains to pass. If any of them evaluate to `false` we will receive an `AssertionError` with the specific constrain assertion returned.
 Lets try it in the REPL. 
 ```clojure
 (defn func ^{:pre [(pos? x)]
