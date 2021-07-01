@@ -38,7 +38,7 @@ We use macros `time` to check how long the function runs to perform our calculat
 
 ```
 
-What if we use a JavaScript array in the ClojureScript environment instead?
+What if we use a JavaScript array in the ClojureScript environment instead? A function `js->clj` is used to convert JS array to the Clojure vector.
 ```Clojure
 ;; ClojureScript
 (defn vrange-j [n]
