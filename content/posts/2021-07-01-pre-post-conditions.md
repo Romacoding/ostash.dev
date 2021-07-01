@@ -2,7 +2,7 @@
 title: "Pre and post conditions in Clojure"
 date: 2021-07-01T00:03:16-09:00
 tags: [Assertions, Function conditions, Clojure, Functional programming]
-draft: true
+draft: false
 ---
 
 Today we will discuss a topic of `pre` and `post` assertions (conditions) in Clojure. The language gives programmers an option to set certain conditions we want to constrain our function with. We can define the limitations on the input parameters and the return value of the function.

@@ -1,7 +1,7 @@
 ---
 title: "Clojure metadata"
 date: 2021-06-18T00:06:16-09:00
-tags: [Type hints, Metadata, Clojure, Functional programming]
+tags: [Type hints, Metadata, Clojure, Functional programming, Performance]
 draft: false
 ---
 Conceptually metadata is an ability for the symbol or the collection to have some additional information for the Clojure compiler. It is implemented as a map data structure and is often used to convey the type information to the compiler, documentation and compilation warnings.

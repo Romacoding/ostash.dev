@@ -1,0 +1,53 @@
+---
+title: "Transient Data Structures in Clojure"
+date: 2021-07-01T00:03:16-09:00
+tags: [Performance, Transient Data Structures, Transients, Clojure, Functional programming]
+draft: true
+---
+Although in Clojure we strictly adhere to the idea of immutability we still have an option to work with mutable data structures.
+
+Transient (mutable) data structures can be used when we are working with large data sets. It may give our application a significant performance boost.
+
+Function `transient` is used to make immutable data structure mutable, then we perform the necessary calculations (operations) and convert it back to mutable one with the function `persistent!` Under the hood it is done by copying the data structure to the transient version of it and then copying it back to immutable. Clojure itself performs mutation on data structures for example when we call `assoc` because of the performance. While the data structure is in a mutable state it is encapsulated from the outside application logic in the function.
+
+Transient data structures are created from the existing persistent data structures. Clojure `vectors`, `maps` and `sets` are supported. `Lists` are excluded since there is no performance benefit of making them mutable.
+
+`Transients` are supporting read-only functions of its immutable versions. For example, you can call `nth`, `get`, `count` on a transient vector. But we cannot use persistent functions of the source data structure. Calling `assoc` or `conj` on the transient vector will throw an exception. In their mutable state maps, sets and vectors have their own alternative functions to perform operations. Functions names are similar to their persistent versions, only the `!` sign is added to the name to signify the mutation, for example assoc!, conj!
+
+Let's write some code it in the REPL. The function `vrange` is used to generate some values and store them in an immutable vector. `vrange-t` has a similar functionality but uses the transient vector to store values.
+
+We use a macros `time` to check how long the function runs to perform our calculations. For cleaner result in the REPL we can wrap a function call with a `do` expression to prevent the returning of the generated vector.
+
+```clojure
+
+(defn vrange [n]
+  (loop [i 0 v []]
+    (if (< i n)
+      (recur (inc i) (conj v i))
+      v)))
+
+(defn vrange-t [n]
+  (loop [i 0 v (transient [])]
+    (if (< i n)
+      (recur (inc i) (conj! v i))
+      (persistent! v))))
+
+;; almost twice faster with transient
+(time (do (vrange 1000000) 0))    ; on average 46 ms
+(time (do (vrange-t 1000000) 0))  ; on average 24 ms
+
+```
+
+What if we use a JavaScript array in the ClojureScript environment instead?
+```Clojure
+;; ClojureScript
+(defn vrange-j [n]
+  (loop [i 0 v #js []]
+    (if (< i n)
+      (recur (inc i) (do (.push v i) v))
+      (js->clj v))))
+
+(time (do (vrange-j 1000000) 0))	; on average 335 ms, much slower
+```
+
+As we can see from our experiments in the REPL, transient data structures, when used properly in the code, give us a substantial performance improvement.
