@@ -1,8 +1,8 @@
 ---
 title: "Transient Data Structures in Clojure"
-date: 2021-07-15T00:03:16-09:00
+date: 2021-07-08T00:03:16-09:00
 tags: [Performance, Transient Data Structures, Transients, Clojure, Functional programming]
-draft: true
+draft: false
 ---
 Although in Clojure we strictly adhere to the idea of immutability we still have an option to work with mutable data structures.
 
