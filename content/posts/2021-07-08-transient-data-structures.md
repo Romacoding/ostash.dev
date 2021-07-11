@@ -1,9 +1,17 @@
 ---
 title: "Transient Data Structures in Clojure"
 date: 2021-07-08T00:03:16-09:00
-tags: [Performance, Transient Data Structures, Transients, Clojure, Functional programming]
+tags:
+  [
+    Performance,
+    Transient Data Structures,
+    Transients,
+    Clojure,
+    Functional programming,
+  ]
 draft: false
 ---
+
 Although in Clojure we strictly adhere to the idea of immutability we still have an option to work with mutable data structures.
 
 Transient (mutable) data structures can be used when we are working with large data sets. It may give our application a significant performance boost.
@@ -38,16 +46,18 @@ We use macros `time` to check how long the function runs to perform our calculat
 
 ```
 
-What if we use a JavaScript array in the ClojureScript environment instead? The tagged literal `#js` will create a JS data structure (an array in our case). `.push` adds elements to our array. A function `js->clj` is used to convert JS array to the Clojure vector. 
-```Clojure
+What if we use a JavaScript array in the ClojureScript environment instead? The tagged literal `#js` will create a JS data structure (an array in our case). `.push` adds elements to our array. A function `js->clj` is used to convert JS array to the Clojure vector.
+Correction: `js->clj` is not optimized for speed so for performance testing we should use `vec` function instead.
+
+```clojure
 ;; ClojureScript
 (defn vrange-j [n]
   (loop [i 0 v #js []]
     (if (< i n)
       (recur (inc i) (do (.push v i) v))
-      (js->clj v))))
+      (vec v))))
 
-(time (do (vrange-j 1000000) 0))	; on average 335 ms, much slower
+(time (do (vrange-j 1000000) 0))	; on average 55 ms, slowest result
 ```
 
 As we can see from our experiments in the REPL, when used properly in the code, transient data structures give us a substantial performance improvement.

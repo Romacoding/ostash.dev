@@ -10,15 +10,19 @@ All data structures in Clojure are immutable. Any changes we do will result in a
 One of the methods to coordinate and control changes in Clojure is to use Atoms, designed specifically to deal with those problems. Atoms are a reference data types and are used for a shared state in applications.
 
 An atom function is used to create `atoms`. Below we define a `bank-account` `atom`. In this example it is a map with the `:balance` key that has an initial value of `0`.
+
 ```clojure
 (def bank-account (atom {:balance 0}))
 ```
+
 To read the current value of the atom we use a `deref` function or simply add `@` sign (deref macros) to its name.
+
 ```clojure
 (deref bank-account) => {:balance 0}
 
 @bank-account => {:balance 0}
 ```
+
 There are two ways to update values in the atom. If we need a previous state to calculate the new value we can use `swap!` function. The `!` symbol after the name indicates that the function is performing a mutation. Function `swap!` takes the name of the atom and the function to perform the changes. In our example we use the `update` function that receives a key of the map value we want to update and the function to perform it. We use a lambda function that receives a previous value as an argument to calculate the new account balance.
 
 ```clojure
@@ -67,7 +71,7 @@ The function `set-validator!` sets a validator for the atom to check if a new st
                                 (>= (:balance new-state) 0)))
 
 (defn withdraw-balance [debit]
-  (swap! bank-account update :balance (fn [prev-balance] 
+  (swap! bank-account update :balance (fn [prev-balance]
                                         (- prev-balance debit))))
 
 (update-balance 10) => Balance was changed to: 10
