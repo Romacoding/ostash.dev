@@ -47,7 +47,7 @@ We use macros `time` to check how long the function runs to perform our calculat
 ```
 
 What if we use a JavaScript array in the ClojureScript environment instead? The tagged literal `#js` will create a JS data structure (an array in our case). `.push` adds elements to our array. A function `js->clj` is used to convert JS array to the Clojure vector.
-Correction: `js->clj` is not optimized for speed so for performance testing we should use `vec` function instead.
+(Correction: `js->clj` is not optimized for speed so for performance testing we should use `vec` function instead.)
 
 ```clojure
 ;; ClojureScript
