@@ -1,7 +1,7 @@
 ---
-title: "A concept of polimorphism in Clojure"
+title: "A concept of polymorphism in Clojure"
 date: 2021-09-08T00:10:16-09:00
-tags: [Polimorphism, Clojure, Functional programming]
+tags: [Polymorphism, Clojure, Functional programming]
 draft: false
 ---
 
